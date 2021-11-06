@@ -10,5 +10,6 @@ function readNum() {
 		.from('D2NYUAD')
 		.select('*')
 	console.log(data);
-	return data
+	const text = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+	return text;
 }
