@@ -4,6 +4,7 @@
     <meta name="viewport" content="with=device-width, initial-scale=1.0">
     <title>NYUAD D2 </title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="functions/read.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load('current', { 'packages': ['corechart'] });
@@ -58,9 +59,14 @@
             <p>
                 By detecting the number of clients using the D2 wifi network, this website tracks approximate number of people in the D2 building.
             </p>
+            <p id="demo"></p>
         </div>
         <div id="chart_div" class="chart"></div>
         <div class="box"></div>
     </section>
+    <script>
+        const array = JSON.parse(readNum);
+        document.getElementById("demo").innerHTML = array[0];
+    </script>
 </body>
 </html>
