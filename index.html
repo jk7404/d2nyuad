@@ -4,28 +4,50 @@
     <meta name="viewport" content="with=device-width, initial-scale=1.0">
     <title>NYUAD D2 </title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="functions/read.js"></script>
+
+    <!-- Load Supabase, the database used in this program. -->
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+
+    <!-- Call function with the DB url and the API key to read data. -->
+    <script>
+        async function readNum() {
+            const { createClient } = supabase
+            url = 'https://uxdydupspijujofdyxug.supabase.co'
+            key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjM2MTc0MzIzLCJleHAiOjE5NTE3NTAzMjN9.M3_cTtMyV5eDLo8QLlyOgpD2YS4uGDz9DLIKQca7Rvs'
+            supabase = createClient(url, key)
+            let { data: D2NYUAD, error } = await supabase
+                .from('D2NYUAD')
+                .select()
+            const array = JSON.parse(data);
+            return array;
+        }
+    </script>
+
+    <!-- Load Google Charts, the graphing program used in the website. -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Function that creates a line chart according to the values read from the DB. -->
     <script type="text/javascript">
+        const num = readNum()[1];
         google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Year', 'Clients'],
-                ['60 min', 25],
-                ['55 min', 23],
-                ['50 min', 26],
-                ['45 min', 27],
-                ['40 min', 31],
-                ['35 min', 29],
-                ['30 min', 30],
-                ['25 min', 33],
-                ['20 min', 37],
-                ['15 min', 40],
-                ['10 min', 47],
-                ['5 min', 54],
-                ['Current', 70]
+                ['60 min', num],
+                ['55 min', num],
+                ['50 min', num],
+                ['45 min', num],
+                ['40 min', num],
+                ['35 min', num],
+                ['30 min', num],
+                ['25 min', num],
+                ['20 min', num],
+                ['15 min', num],
+                ['10 min', num],
+                ['5 min', num],
+                ['Current', num]
             ]);
 
             var options = {
@@ -45,6 +67,7 @@
     </script>
 </head>
 <body>
+    <!-- Header class with the title and the 'about' page(not yet implemented). -->
     <section class="header">
         <nav>
             <a href="index.html"><img src="images/logo.png" /></a>
@@ -54,6 +77,8 @@
                 </ul>
             </div>
         </nav>
+
+        <!-- Introduction. -->
         <div class="text-box">
             <h1>How many people are at D2 right now?</h1>
             <p>
@@ -61,6 +86,9 @@
             </p>
             <p id="demo"></p>
         </div>
+
+
+        <!-- Prints the number of current people in D2(not yet implemented). -->
         <div class="text-exp">
             <h1>There are currently about</h1>
         </div>
@@ -70,6 +98,9 @@
         <div class="text-exp2">
             <h1>people in D2.</h1>
         </div>
+
+
+        <!-- Call the chart function. -->
         <div id="chart_div" class="chart"></div>
         <div class="box"></div>
     </section>
