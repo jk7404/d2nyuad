@@ -3,6 +3,6 @@
     "description": "Number of People in NYUAD D2 Building",
     "version": "1.0",
     "devDependencies": {
-        "supabase": "~0.0.3"
+        "@supabase/supabase-js": "~1.25.2"
     }
 }
