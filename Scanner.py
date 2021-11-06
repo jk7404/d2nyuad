@@ -1,7 +1,3 @@
-  # Credits: This code is mostly written by Dharmil Chhadva
-# The link to his website: https://levelup.gitconnected.com/writing-a-network-scanner-using-python-a41273baf1e2
-
-
 import scapy.all as scapy
 import argparse
 
