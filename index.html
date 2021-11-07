@@ -24,8 +24,6 @@
                 .select('num')
             for (var i = 0; i < 13; i++) {
                 array[i] = response.body[response.body.length - 13 + i].num;
-                console.log(response.body[response.body.length - 13 + i].num);
-                console.log(array[i]);
             }
             document.getElementById("num").innerHTML = array[12];
             return array;
@@ -51,7 +49,6 @@
                 ['5 min', array[11]],
                 ['Current', array[12]]
             ]);
-            console.log(array[0]);
 
             var options = {
                 backgroundColor: { fill: 'transparent' },
