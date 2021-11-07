@@ -30,29 +30,6 @@ nav img{
     flex: 1;
     text-align: right;
 }
-.nav-links ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-.nav-links ul li a{
-    color: #fff;
-    text-decoration: none;
-    font-size:16px;
-}
-.nav-links ul li::after{
-    content:'';
-    width:0%;
-    height:3px;
-    background:#f44336;
-    display:block;
-    margin:auto;
-    transition:0.5s;
-}
-.nav-links ul li:hover::after {
-    width: 100%;
-}
 .text-box{
     width:90%;
     color:#fff;
@@ -75,30 +52,10 @@ nav img{
     color: #000;
     position: absolute;
     top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-.text-num {
-    font-size: 27px;
-    width: 90%;
-    color: #000;
-    position: absolute;
-    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
-.text-exp2 {
-    width: 90%;
-    color: #000;
-    position: absolute;
-    top: 40%;
-    left: 56%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
 .chart {
     margin: 150px auto;
     width: 1000px;
